@@ -1,0 +1,156 @@
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ vi file1
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ git add .
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ gir commit -m "merger on file1"
+bash: gir: command not found
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ git commit -m "merger completed file1"
+[master 52e24b8] merger completed file1
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ vi file1
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ cat file1
+
+hello i'm in maste:
+hello i'm in release1
+>>>>>>> release1
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ touch login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git add .
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git commit -m "login"
+[master 2be9756] login
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git branch release2
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git branch
+* master
+  release1
+  release2
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git checkout release2
+Switched to branch 'release2'
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ ls
+file1  login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ git checkout master
+Switched to branch 'master'
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ vi login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git checkout master
+Already on 'master'
+M       login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git add .
+warning: LF will be replaced by CRLF in login.
+The file will have its original line endings in your working directory
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git commit -m "login"
+[master 490fab5] login
+ 1 file changed, 1 insertion(+)
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git checkout release2
+Switched to branch 'release2'
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ vi login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ GIT CHECKOUT MASTER
+fatal: cannot handle CHECKOUT as a builtin
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        login
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ ls
+file1  login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ git status
+On branch release2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   login
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ git add .
+warning: LF will be replaced by CRLF in login.
+The file will have its original line endings in your working directory
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ git commit -m "update login"
+[release2 7d6da28] update login
+ 1 file changed, 1 insertion(+)
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (release2)
+$ git checkout master
+Switched to branch 'master'
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git merge release1
+Already up to date.
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ git merge release2
+Auto-merging login
+CONFLICT (content): Merge conflict in login
+Automatic merge failed; fix conflicts and then commit the result.
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ vi login
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ git add .
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master|MERGING)
+$ git commit -m "login merge"
+[master 5bea02b] login merge
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$ cat login
+
+login color image
+add image to upload passport
+>>>>>>> release2
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/Newproject (master)
+$

@@ -1,0 +1,154 @@
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash list
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git test1 test2 test3
+git: 'test1' is not a git command. See 'git --help'.
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ touch test1 test2 test3
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test1
+        test2
+        test3
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git add test1
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git add test2
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test1
+        new file:   test2
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test3
+
+
+ayaan@Ayaan MINGW64 stash~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash save "ui file"
+Saved working directory and index state On master: ui file
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test3
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git add .
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test3
+
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git commit -m "file3"
+[master 98cc68e] file3
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test3
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash list
+stash@{0}: On master: ui file
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash show -p stash@0
+error: stash@0 is not a valid reference
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash show -p stash@{0}
+diff --git a/test1 b/test1
+new file mode 100644
+index 0000000..e69de29
+diff --git a/test2 b/test2
+new file mode 100644
+index 0000000..e69de29
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ ^C
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ touch db1
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        db1
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git add .
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   db1
+
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash list
+stash@{0}: On master: ui file
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash save "db file"
+Saved working directory and index state On master: db file
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ git stash list
+stash@{0}: On master: db file
+stash@{1}: On master: ui file
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ pop apply drop
+bash: pop: command not found
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ cd aijazmohammed
+bash: cd: aijazmohammed: No such file or directory
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ cd ayaan
+bash: cd: ayaan: No such file or directory
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)
+$ ls
+file1  file2  file3  test3
+
+ayaan@Ayaan MINGW64 ~/OneDrive/Documents/AWS/GITNEWPROJ (master)

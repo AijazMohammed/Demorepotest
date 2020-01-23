@@ -1,0 +1,10 @@
+Project Organization
+Field	Value
+Name	The Apache Software Foundation
+URL	https://www.apache.org/
+Build Information
+Field	Value
+GroupId	org.apache.maven.archetypes
+ArtifactId	maven-archetype-quickstart
+Version	1.4
+Type	maven-archetype
